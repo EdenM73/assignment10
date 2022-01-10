@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment11</title>
+    <script src="static/assignment11.js" ></script>
+
+</head>
+<body>
+
+<h2>get data from the backend: </h2>
+<form name="backend" id="backend" action="/assignment11/outer_source">
+        type requested user number: <input type="number" name="number">
+        press here to get your user:<input type="submit" value="get your user">
+    </form>
+
+ {% if users %}
+     <h3>user name: {{ users.data.first_name }} </h3>
+    <h3>user email: {{ users.data.email }} </h3>
+    {% endif %}
+
+<h2>get data from the fronted: </h2>
+        type requested user number: <input type="number" name="number" id="number">
+        press here to get your user: <input type="submit" value="get your user" onclick="getUsers()">
+
+</body>
+</html>
